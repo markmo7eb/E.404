@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error 404 | تشكيلة التيشيرتات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* --- General Animation --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-item {
+      opacity: 0; /* Start hidden */
+      animation: fadeInUp 0.8s ease-out forwards;
+      /* Base animation, delay will be added inline or via specific selectors */
+    }
+    /* --- End General Animation --- */
+
+    :root {
+      --primary-color: #00ffd5;
+      --secondary-color: #1a1a1a;
+      --bg-color: #0a0a0a;
+      --card-bg: #1a1a1a;
+      --text-color: #fff;
+      --text-secondary: #aaa;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+      --input-bg: #2a2a2a; /* Added for potential future use, consistent with contact page */
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1 (1).jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 0 2rem;
+      margin-top: 60px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-out 0.5s forwards;
+    }
+
+    @keyframes fadeInHero {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--primary-color);
+    }
+
+    .cta-button:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+
+    /* New Features Section Styles */
+    .features-section {
+      background-color: var(--secondary-color); /* Slightly different background */
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .features-section h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item {
+      background-color: var(--card-bg); /* Use card background */
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+     .feature-item:hover {
+       transform: translateY(-8px);
+       box-shadow: 0 6px 25px rgba(0, 255, 213, 0.15);
+     }
+
+    .feature-item i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: block; /* Ensure icon takes full width for centering */
+    }
+
+    .feature-item h3 {
+      font-size: 1.3rem;
+      color: var(--text-color); /* White text for heading */
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-item p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    /* End of New Features Section Styles */
+
+    .products-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0, 255, 213, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .buy-btn:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      /* Adjust features section for mobile */
+       .features-section h2 {
+         font-size: 2rem;
+         margin-bottom: 2rem;
+       }
+       .features-grid {
+         gap: 1.5rem;
+       }
+       /* End mobile adjustments */
+
+      .products-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Style for animated items in features/products */
+    .features-section .feature-item,
+    .products-container .product-card {
+        opacity: 0; /* Start hidden */
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Add staggered delays (adjust timing as needed) */
+    .features-section .feature-item:nth-child(1) { animation-delay: 0.2s; }
+    .features-section .feature-item:nth-child(2) { animation-delay: 0.4s; }
+    .features-section .feature-item:nth-child(3) { animation-delay: 0.6s; }
+
+    .products-container .product-card:nth-child(1) { animation-delay: 0.3s; }
+    .products-container .product-card:nth-child(2) { animation-delay: 0.4s; }
+    .products-container .product-card:nth-child(3) { animation-delay: 0.5s; }
+    .products-container .product-card:nth-child(4) { animation-delay: 0.6s; }
+    .products-container .product-card:nth-child(5) { animation-delay: 0.7s; }
+    .products-container .product-card:nth-child(6) { animation-delay: 0.8s; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="home.html" class="logo">Error 404</a>
+      <div class="nav-links">
+        <a href="home.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="about.html">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Error 404</h1>
+      <p>تشكيلة تيشيرتات فريدة من نوعها لعشاق التميز والستايل</p>
+      <a href="#products" class="cta-button">اكتشف المجموعة</a>
+    </div>
+  </section>
+
+  <!-- New Features Section -->
+  <section class="features-section">
+    <h2>لماذا تختار Error 404؟</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-palette"></i>
+        <h3>تصاميم فريدة</h3>
+        <p>نقدم تشكيلة مبتكرة وحصرية تعكس أحدث صيحات الشارع والتقنية.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-tshirt"></i>
+        <h3>جودة عالية</h3>
+        <p>نستخدم أجود أنواع القطن المريح وتقنيات طباعة متقدمة تدوم طويلاً.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-flag"></i>
+        <h3>صنع في مصر</h3>
+        <p>ادعم منتجًا محليًا بمعايير عالمية، مصمم ومصنوع بفخر في مصر.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End of New Features Section -->
+
+  <section id="products" class="products-container">
+    <!-- Add a heading for the products section -->
+    <h2 class="animated-item" style="animation-delay: 0.1s; grid-column: 1 / -1; text-align: center; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 3rem;">
+      اكتشف مجموعتنا
+    </h2>
+
+    <div class="product-card">
+      <img src="1 (1).jpeg" alt="تيشيرت 1">
+      <div class="product-info">
+        <h3>تيشيرت نيون دارك</h3>
+        <p>ستايل جريء ولمسة مستقبلية – قطن 100%</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (2).jpeg" alt="تيشيرت 2">
+      <div class="product-info">
+        <h3>تيشيرت كود خربان</h3>
+        <p>للمهووسين بالتقنية والهاكر ستايل</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (3).jpeg" alt="تيشيرت 3">
+      <div class="product-info">
+        <h3>تيشيرت 404 كلاسيك</h3>
+        <p>تصميم بسيط وعصري لكل الأذواق</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (4).jpeg" alt="تيشيرت 4">
+      <div class="product-info">
+        <h3>تيشيرت نو سيجنال</h3>
+        <p>مستوحى من شاشات التلفزيون القديمة</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (5).jpeg" alt="تيشيرت 5">
+      <div class="product-info">
+        <h3>تيشيرت ديب مود</h3>
+        <p>ستايل دارك مع لمسة نيون دقيقة</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  
+    <div class="product-card">
+      <img src="1 (6).jpeg" alt="تيشيرت 6">
+      <div class="product-info">
+        <h3>تيشيرت جليتش</h3>
+        <p>تصميم glitchy جريء مش لأي حد</p>
+        <a href="#" class="buy-btn">اشترِ الآن</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="animated-item" style="animation-delay: 0.5s;">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Error 404</h3>
+        <p>براند مصري للشارع العالمي، نقدم تشكيلة فريدة من التيشيرتات بتصميمات مبتكرة.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>روابط سريعة</h3>
+        <a href="home.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">الرئيسية</a>
+        <a href="products.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">المنتجات</a>
+        <a href="about.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">عن الشركة</a>
+        <a href="contact.html" style="color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem;">اتصل بنا</a>
+      </div>
+      <div class="footer-section">
+        <h3>اتصل بنا</h3>
+        <p><i class="fas fa-phone" style="margin-left: 0.5rem;"></i> +20 123 456 7890</p>
+        <p><i class="fas fa-envelope" style="margin-left: 0.5rem;"></i> info@error404.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Error 404 - جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+</body>
+</html>
